@@ -4,7 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  var nuevoNombre="" ;
+  /*var nuevoNombre="" ;
   for ( var i = 0 ; i< nombre.length ; i++){
     if (i===0){
       nuevoNombre = nuevoNombre + nombre[i].toUpperCase();
@@ -13,7 +13,13 @@ function mayuscula(nombre) {
       nuevoNombre = nuevoNombre + nombre[i];
     }
   }
-  return nuevoNombre ;  
+  return nuevoNombre ;  */
+  return (nombre[0].toUpperCase() + nombre.slice(1));
+
+  /*var iniciar=nombre[0]
+  var mayuscula= iniciar.toUpperCase()
+  return
+  */
 }
 
 function invocarCallback(cb) {
@@ -35,12 +41,19 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var suma=0;
+  /*var suma=0;
   for ( var i = 0 ; i< numeros.length ; i++){
     suma = suma + numeros[i];
 
   }
+  cb (suma);*/
+  
+  var suma =numeros.reduce(function(acc,elemento){
+    var sum =acc + elemento;
+    return sum;
+  },0 )
   cb (suma);
+
 
 }
 
