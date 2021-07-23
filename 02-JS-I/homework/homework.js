@@ -131,7 +131,9 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
-  return num * num ;
+  return num **2
+
+  //return num * num ;
   //return Math.pow(num,2) ;
 }
 
@@ -236,14 +238,23 @@ function esVocal(letra){
   //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   //Escribe tu código aquí
-if (letra.length > 1 ) {
+/*if (letra.length > 1 ) {
 return "Dato incorrecto" ;
 }
 if ((letra === "a","e","i","o","u" )) {
   return "Es vocal";
+}*/
+
+if (letra.length > 1 ) {
+  return "Dato incorrecto" ;
+  }
+  if ((letra === "a"|| letra === "e" || letra === "i"|| letra === "o" || letra === 'u' )) {
+    return "Es vocal";
+  }
+  
 }
 
-}
+
 
 
 // No modificar nada debajo de esta línea

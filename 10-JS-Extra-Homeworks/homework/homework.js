@@ -35,7 +35,41 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+
+ 
+  var pg='';
+  var previa='';
+
+  function invertir (string) {
+    var invertida='';
+    var j=string.length;
+    while (j>=0) {
+        invertida=invertida+string.charAt(j) ;
+        j--;
+    }
+    return invertida;
+  }
+
+    for (var i=0;i<=str.length;i++) {
+
+      if (i>str.length-1) {
+        previa=previa +invertir(pg);
+        return previa;
+      }
+      if (str.charAt(i)===' '||i>str.length-1) {
+        previa=previa +invertir(pg) + ' ';
+        pg='';
+        continue;
+      }
+      else {
+        pg=pg+str.charAt(i)
+      }
+    }
+  return previa;
+}
+
+
+
 
 
 function capicua(numero){
