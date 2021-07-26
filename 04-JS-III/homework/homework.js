@@ -3,14 +3,16 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un array
   // Tu código:
-  return array[0];
+  return array.shift()
+  //return array[0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  return array[array.length - 1];
+  //return array[array.length - 1];
+  return array.pop()
 
 }
 
@@ -62,11 +64,27 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  var respuesta=palabras[0];
+  /*var respuesta=palabras[0];
   for (var i=1 ;i<palabras.length;i++){
     respuesta = respuesta + " " + palabras[i];
   }
-  return respuesta;
+  return respuesta;*/
+
+  return palabras.join(" ");
+
+  /*var aux;
+  for (var i=0 ;i<palabras.length;i++){
+    if (i===0 ){
+      aux = palabras[i]
+    }else {
+
+      aux = aux + " " + palabras[i]; 
+    }
+    
+  }
+  return aux;*/
+  
+
 }
 
 
@@ -74,13 +92,16 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  var respuesta;
+  /*var respuesta;
   for (var i=0 ;i<array.length;i++){
     if (array[i]===elemento){
       return true;
     }
   }
-  return false;
+  return false;*/
+
+
+  return array.includes(elemento)
 
 }
 
@@ -94,6 +115,8 @@ function agregarNumeros(numeros) {
       respuesta += numeros[i];
     }
     return respuesta;
+
+    
 }
 
 
@@ -107,8 +130,8 @@ function promedioResultadosTest(resultadosTest) {
   }
   respuesta = respuesta / resultadosTest.length;
   return respuesta;*/
-
-  var respuesta  = agregarNumeros(resultadosTest);
+  
+  var respuesta  = agregarNumeros(resultadosTest);//funcion agregarNumeros esta mas arriba
   var promedio = respuesta / resultadosTest.length;
   return promedio;
 
@@ -127,6 +150,8 @@ function numeroMasGrande(numeros) {
     
   }
   return mayor;
+
+  
 }
 
 
@@ -200,7 +225,7 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var aux = arreglo[0];
+  /*var aux = arreglo[0];
   for (var i=1 ; i < arreglo.length; i++ ){
     if (aux === arreglo[i]){
      aux= arreglo[i];
@@ -208,7 +233,18 @@ function todosIguales(arreglo) {
       return false;
     }
   }
-  return true
+  return true*/
+
+  var aux;
+  for (var i=1 ; i < arreglo.length-1; i++ ){
+    if (arreglo[i] === arreglo[i + 1]){
+     aux= true;
+    }else {
+      return false;
+    }
+  }
+  return aux
+
 } 
 
 
@@ -254,7 +290,7 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var array2=[];
+  /*var array2=[];
   var numx = numero;
 
   for (var i=0 ; i < 10; i++ ){
@@ -269,7 +305,30 @@ function breakStatement(numero) {
     return "Se interrumpió la ejecución";
   }else {
     return array2;
+  }*/
+
+  var array2=[];
+  var numx = numero;
+
+  for (var i=0 ; i < 10; i++ ){
+    numx= numx + 2;
+    if ( numx === i ) {
+      break;
+    }else {
+      array2.push(numx);
+    }
+  }  
+  if (array2.length<10) {
+    return "Se interrumpió la ejecución";
+  }else {
+    return array2;
   }
+
+
+
+
+
+
 }
 
 
